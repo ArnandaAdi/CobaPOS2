@@ -1,0 +1,27 @@
+package PointOfSales.ProjectPOS.DTO;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
+import lombok.Data;
+@Data
+public class TransactionDetailsDTO {
+    @NotNull(message = "Transaction ID tidak boleh kosong")
+    @Positive(message = "Transaction ID harus lebih besar dari 0")
+    private Long transaction_id;
+
+    @NotNull(message = "Product ID tidak boleh kosong")
+    @Positive(message = "Product ID harus lebih besar dari 0")
+    private Long product_id;
+
+    @NotBlank(message = "Nama produk tidak boleh kosong")
+    private String product_name;
+
+    @NotNull(message = "Quantity tidak boleh kosong")
+    @Positive(message = "Quantity harus lebih besar dari 0")
+    private Integer quantity;
+
+    @NotNull(message = "Subtotal tidak boleh kosong")
+    @Positive(message = "Subtotal harus lebih besar dari 0")
+    private Integer sub_total;
+}
